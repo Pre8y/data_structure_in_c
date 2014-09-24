@@ -62,3 +62,45 @@ void* remove_from_end(node **head)
 	temp->next = NULL;
 	return k->data;
 }
+
+int size(node *head)
+{
+	int count = 0;
+	while(head!=NULL)
+	{
+		head = head->next;
+		count++;
+	}
+	return count;
+}
+
+int search(node *head, void *data)
+{	
+	int count = 0;
+	while(head!=NULL && head->data!=data)
+	{
+		head=head->next;
+		count++;
+	}
+	if(head->data==data)
+		return count;
+	return -1;
+
+
+}
+void* mid_element(node *head)
+{
+	node *first, *second;
+	int position = 0;
+	first = head;
+	second = head;
+	while(first!=NULL)
+	{
+		first=first->next;
+		position++;
+		if(position%2==0)
+			second=second->next;
+	}
+	return second->data;
+
+}

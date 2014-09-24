@@ -12,5 +12,8 @@ void add_at_end(node **, void *);
 void print_list(node *);
 void* remove_from_start(node **);
 void* remove_from_end(node **);
+int search(node *, void *);
+int size(node *);
+void* mid_element(node *);
 #endif
 
