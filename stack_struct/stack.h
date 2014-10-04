@@ -6,15 +6,16 @@
 #define FALSE 0
 #define MAX 10
 
-typedef struct stack_node {
+typedef struct stack_node{
 	void *data;
-	stack* next;
-} stack;
+	struct stack_node *next;
+}stack ;
 
-stack* tos;
+
 stack* init();
-void push(stack *st, void *data);
-void* pop(stack *st);
+void push(stack **st, void *data);
+void* pop(stack **st);
 int is_empty(stack *st);
-int is_full(stack *st);
+void* peek(stack *st);
+void print_stack(stack *st);
 #endif
